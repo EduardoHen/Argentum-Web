@@ -1,0 +1,26 @@
+<list>
+  <negociacao>
+    <preco>42.2</preco>
+    <quantidade>1200</quantidade>
+    <data>
+      <time>1456001743660</time>
+      <timezone>America/Sao_Paulo</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>38.2</preco>
+    <quantidade>700</quantidade>
+    <data>
+      <time>1456001743786</time>
+      <timezone>America/Sao_Paulo</timezone>
+    </data>
+  </negociacao>
+  <negociacao>
+    <preco>46.0</preco>
+    <quantidade>1000</quantidade>
+    <data>
+      <time>1456001743786</time>
+      <timezone>America/Sao_Paulo</timezone>
+    </data>
+  </negociacao>
+</list>

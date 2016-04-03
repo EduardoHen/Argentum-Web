@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+	<title>Argentum - Negociacoes</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:dataTable paginator="true" rows="20" var="negociacao" value="#{argentumBean.negociacoes}">
+				<p:column sortBy="#{negociacao.preco}" headerText="Preco">
+					<h:outputText value="#{negociacao.preco}"/>
+				</p:column>
+				<p:column sortBy="#{nogociacao.quantidade}" headerText="Quantidade">
+					<h:outputText value="#{negociacao.quantidade}"/>
+				</p:column>
+				<p:column sortBy="#{negociacao.volume}" headerText="Volume">
+					<h:outputText value="#{negociacao.volume}"/>
+				</p:column>
+				<p:column sortBy="#{negociacao.data}" headerText="Data">
+					<h:outputText  value="#{negociacao.data.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+					</h:outputText>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</h:body>
+</html>
