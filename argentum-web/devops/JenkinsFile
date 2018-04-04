@@ -19,12 +19,12 @@ pipeline {
                 sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a analize'
             }
         }
-        stage('Quality Gates') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a gates'
-                }
-            }
-        }
+        //stage('Quality Gates') {
+        //    steps {
+        //        withSonarQubeEnv('SonarQube') {
+        //            sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a gates'
+        //        }
+        //    }
+        //}
     }
 }
