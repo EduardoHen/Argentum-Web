@@ -1,5 +1,6 @@
 package br.com.caelum.argentum.grafico;
 
+import org.apache.xpath.operations.Number;
 import org.primefaces.model.chart.ChartModel;
 import org.primefaces.model.chart.ChartSeries;
 import org.primefaces.model.chart.LineChartModel;

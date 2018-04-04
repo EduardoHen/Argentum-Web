@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    
+    //agent {label 'JenkinsSlaves'}
+    environment {
+        SONAR_TOKEN     = credentials('sonar_token')
+        SONAR_URL       = credentials('sonar_url')
+    }
+    
+    stages {
+        stage('DevOps-Tools'){
+            steps {
+                sh 'rm -rf check.status'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'devops-tools']], submoduleCfg: [], userRemoteConfigs: [[url: 'git@bitbucket.org:dasa_desenv_middleware/devops-tools.git']]])
+            }
+        }
+        stage('Quality Analyzing') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a analize'
+            }
+        }
+        stage('Quality Gates') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a gates'
+                }
+            }
+        }
+    }
+}
